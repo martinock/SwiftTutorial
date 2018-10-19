@@ -39,6 +39,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func labelTapGesture(_ sender: Any) {
+        print("Label Tapped")
+    }
+    
 }
 
