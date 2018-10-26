@@ -28,17 +28,21 @@ class ViewController: UIViewController {
     @IBAction func onLogin(_ sender: Any) {
         if let username = usernameTextField.text, let password = passwordTextField.text {
             if username != "", password != "" {
-                let homeViewController = HomeViewController()
-                homeViewController.username = usernameTextField.text
                 
-                /* Show without segue */
-                self.navigationController?.pushViewController(homeViewController, animated: true)
-                
-                /* Present without segue */
-//                self.present(homeViewController, animated: true, completion: nil)
-                
-                /* Embed VC to UI Navigation Controller programmatically */
-//                let navigationController = UINavigationController(navigationController, animated: true)
+                if let homeViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController {
+                    homeViewController.username = usernameTextField.text
+                    if let navigator = navigationController {
+                        navigator.pushViewController(homeViewController, animated: true)
+                        /* Show without segue */
+//                        self.navigationController?.pushViewController(homeViewController, animated: true)
+                        
+                        /* Present without segue */
+                        //                self.present(homeViewController, animated: true, completion: nil)
+                        
+                        /* Embed VC to UI Navigation Controller programmatically */
+                        //                let navigationController = UINavigationController(navigationController, animated: true)
+                    }
+                }
             } else {
                 titleLabel.text = "Hello, anonymous!"
             }

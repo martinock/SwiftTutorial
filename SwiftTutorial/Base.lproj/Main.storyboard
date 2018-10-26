@@ -91,7 +91,7 @@
         <!--Home View Controller-->
         <scene sceneID="QFf-o2-O51">
             <objects>
-                <viewController id="nso-jT-7OK" customClass="HomeViewController" customModule="SwiftTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nso-jT-7OK" customClass="HomeViewController" customModule="SwiftTutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTn-Qz-f1z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -18,9 +18,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         /* A way to hide back button on "show" Segue */
-//        navigationItem.hidesBackButton = true
-        // Do any additional setup after loading the view.
-        usernameLabel.text = username ?? "!"
+        navigationItem.hidesBackButton = true
+
+        if username != nil {
+            usernameLabel?.text = username
+        } else {
+            usernameLabel.text = "User!"
+        }
     }
     
 
