@@ -12,6 +12,8 @@
 		E5E96C1C2176DAAA00BACEDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E96C1A2176DAAA00BACEDB /* Main.storyboard */; };
 		E5E96C1E2176DAB700BACEDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E96C1D2176DAB700BACEDB /* Assets.xcassets */; };
 		E5E96C212176DAB700BACEDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E96C1F2176DAB700BACEDB /* LaunchScreen.storyboard */; };
+		E5FD79012182A812000D31CD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD79002182A812000D31CD /* SignUpViewController.swift */; };
+		E5FD79032182B312000D31CD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FD79022182B312000D31CD /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E5E96C1D2176DAB700BACEDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E96C202176DAB700BACEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E96C222176DAB700BACEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5FD79002182A812000D31CD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E5FD79022182B312000D31CD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				E5E96C1D2176DAB700BACEDB /* Assets.xcassets */,
 				E5E96C1F2176DAB700BACEDB /* LaunchScreen.storyboard */,
 				E5E96C222176DAB700BACEDB /* Info.plist */,
+				E5FD79002182A812000D31CD /* SignUpViewController.swift */,
+				E5FD79022182B312000D31CD /* HomeViewController.swift */,
 			);
 			path = SwiftTutorial;
 			sourceTree = "<group>";
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5FD79012182A812000D31CD /* SignUpViewController.swift in Sources */,
 				E5E96C192176DAAA00BACEDB /* ViewController.swift in Sources */,
 				E5E96C172176DAAA00BACEDB /* AppDelegate.swift in Sources */,
+				E5FD79032182B312000D31CD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

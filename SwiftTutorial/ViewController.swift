@@ -19,12 +19,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 //        titleLabel.text = "Success"
+        /** Navigate programatically
+         * NOTE: Set id to segue first
+         */
+        // performSegue(withIdentifier: "signUpSegue", sender: self)
     }
 
     @IBAction func onLogin(_ sender: Any) {
         if let username = usernameTextField.text, let password = passwordTextField.text {
             if username != "", password != "" {
-                titleLabel.text = "Hello, " + username + "!"
+                let homeViewController = HomeViewController()
+                homeViewController.username = usernameTextField.text
+                
+                /* Show without segue */
+                self.navigationController?.pushViewController(homeViewController, animated: true)
+                
+                /* Present without segue */
+//                self.present(homeViewController, animated: true, completion: nil)
+                
+                /* Embed VC to UI Navigation Controller programmatically */
+//                let navigationController = UINavigationController(navigationController, animated: true)
             } else {
                 titleLabel.text = "Hello, anonymous!"
             }
@@ -32,6 +46,34 @@ class ViewController: UIViewController {
         } else {
             titleLabel.text = "Hello, anonymous!"
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? HomeViewController {
+            viewController.username = usernameTextField.text
+        }
+    }
+    
+    /**
+     * A callback function before a segue is performed
+     *
+     * NOTE: can be used for validation like this
+     * Don't forget to add identifier to segue
+     */
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "HomeSegue" {
+            if let username = usernameTextField.text, let password = passwordTextField.text {
+                if username != "", password != "" {
+                    return true
+                } else {
+                    return false
+                }
+                
+            } else {
+                return false
+            }
+        }
+        return false
     }
     
     override func didReceiveMemoryWarning() {

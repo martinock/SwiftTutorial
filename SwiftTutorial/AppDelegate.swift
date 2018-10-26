@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /* SET INITIAL SCREEN PROGRAMATICALLY */
+        
+        /* frame: x, y depends on parent
+         bounds: x, y depends on itself (start with 0) */
+        
+        /* This code is helpful when we dynamically want to change the initial screen. (example: user login, show home screen instead of login screen) */
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//
+//        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController")
+//
+//        window?.rootViewController = viewController
+//        window?.makeKeyAndVisible()
+        /***************************************/
+        
         return true
     }
 
