@@ -63,6 +63,7 @@ class ViewController: UIViewController {
      *
      * NOTE: can be used for validation like this
      * Don't forget to add identifier to segue
+     * This will affect every segue, so please insert every segue connected with this View Controller
      */
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "HomeSegue" {
