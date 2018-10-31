@@ -77,6 +77,10 @@ class ViewController: UIViewController {
                 return false
             }
         }
+        
+        if identifier == "signBarSegue" {
+            return true
+        }
         return false
     }
     
