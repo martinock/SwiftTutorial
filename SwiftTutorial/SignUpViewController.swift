@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,44 @@ class SignUpViewController: UIViewController {
         
         /* Dismiss "present modally" segue */
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // NOTE: Sending post request and handle the success and failure
+    @IBAction func onSubmit(_ sender: Any) {
+        Alamofire
+            .request(URL(string: "http://93.188.167.250:8080/login")!,
+                          method: .post,
+                          parameters: [
+                            "name": usernameTextField.text ?? "",
+                            "email": emailTextField.text ?? "",
+                            "password": passwordTextField.text ?? ""
+                        ],
+                          encoding: JSONEncoding.default)
+            .responseJSON{(response) in
+                switch response.result {
+                //NOTE: Success handler
+                case .success(_):
+                    let alert = UIAlertController(title: nil, message: "SUCCESS", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                        _ in
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    break;
+                //NOTE: Error handler
+                case .failure(let error):
+                    var messageError = "Failure"
+                    //NOTE: how to get error code
+                    if error._code == NSURLErrorNotConnectedToInternet {
+                        messageError = "Tidak ada koneksi internet"
+                    }
+                    let alert = UIAlertController(title: "Failure", message: messageError, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+                        _ in
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    break;
+                }
+        }
     }
     
     /*

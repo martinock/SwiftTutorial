@@ -1,0 +1,6 @@
+framework module Pods_SwiftTutorial {
+  umbrella header "Pods-SwiftTutorial-umbrella.h"
+
+  export *
+  module * { export * }
+}
