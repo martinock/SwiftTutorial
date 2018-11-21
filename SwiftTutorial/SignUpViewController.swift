@@ -44,11 +44,16 @@ class SignUpViewController: UIViewController {
                 switch response.result {
                 //NOTE: Success handler
                 case .success(_):
-                    let alert = UIAlertController(title: nil, message: "SUCCESS", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {
-                        _ in
-                    }))
-                    self.present(alert, animated: true, completion: nil)
+                    //NOTE: A way to store data locally (Same as SharedPreference in Android)
+                    let userDefaults = UserDefaults.standard
+                    userDefaults.set(true, forKey: "isLogin")
+
+                    //NOTE: set the initial view into home screen (home screen not implemented)
+//                    let window = UIApplication.shared.keyWindow
+//                    let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//                    let secondVC = storyBoard.instantiateViewController(withIdentifier: "listIdentifier")
+//                    window?.rootViewController = secondVC
+                    
                     break;
                 //NOTE: Error handler
                 case .failure(let error):

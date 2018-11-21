@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: "isLogin") {
+            print("tes")
+            //NOTE: set the initial view into home screen (home screen not implemented)
+//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//            let secondVC = storyBoard.instantiateViewController(withIdentifier: "listIdentifier")
+//            window?.rootViewController = secondVC
+        }
+        
         /* SET INITIAL SCREEN PROGRAMATICALLY */
         
         /* frame: x, y depends on parent
